@@ -1,0 +1,60 @@
+.navBarContainer {
+  height: 110px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 999;
+
+  .navBar {
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 65px;
+    max-width: 1000px;
+    border-radius: 25px;
+    background-color: rgba(235, 235, 235, 0.3);
+    backdrop-filter: blur(15px);
+
+    .navBarLeft {
+      color: white;
+      font-weight: 400;
+      font-size: 25px;
+      cursor: pointer;
+    }
+    .navBarCenter {
+    }
+    .navBarRight {
+      .navBarRightItem {
+        border: none;
+        background-color: transparent;
+        color: white;
+        padding: 5px;
+        width: 120px;
+        font-size: 17px;
+        cursor: pointer;
+        margin: 0 10px;
+        background-color: rgb(87, 68, 255);
+        border: 2px solid rgb(87, 68, 255);
+        border-radius: 15px;
+      }
+      .navBarRightItem.invert{
+        background-color: transparent;
+        border: 2px solid rgb(87, 68, 255);
+        color: rgb(87, 68, 255);
+        font-weight: 600;
+      }
+    }
+    .navBarItem {
+      border: none;
+      background-color: transparent;
+      color: white;
+      font-size: 17px;
+      cursor: pointer;
+      margin: 0 10px;
+    }
+  }
+}

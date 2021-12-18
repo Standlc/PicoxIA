@@ -1,0 +1,63 @@
+.presentationComponentWrapper {
+  display: flex;
+  align-items: flex-start;
+  border-radius: 60px;
+  background-color: rgba(245, 245, 245, 0.15);
+  padding: 0 20px;
+  flex: 1;
+
+  .presentationImageContainer {
+    position: sticky;
+    top: 0px;
+    height: 100vh;
+    flex: 4;
+    display: flex;
+    align-items: center;
+
+    .presentationImageWrapper {
+      right: 0;
+      position: absolute;
+      width: 60vw;
+      min-width: 600px;
+      padding: 30px;
+      border-radius: 35px;
+      background-color: rgba(245, 245, 245, 0.2);
+      box-shadow: 0px 15px 50px 0px rgba(0, 0, 0, 0.11);
+      backdrop-filter: blur(15px);
+
+      .presentationComponentImage {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+      }
+    }
+  }
+
+  .presentationDescriptionsContainer {
+    flex: 3;
+    height: 250vh;
+    padding: 40vh 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    .presentationDescriptionWrapper {
+      display: flex;
+      align-items: center;
+      padding: 20px 0;
+
+      .presentationDescription {
+        color: whitesmoke;
+        font-size: 22px;
+        margin-left: 40px;
+        font-weight: 300;
+      }
+    }
+  }
+  .presentationLine {
+    width: 1px;
+    flex: 1;
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+}

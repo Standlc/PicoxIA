@@ -1,27 +1,24 @@
 .collaboratorsSection {
-  height: 300px;
   width: 100%;
-  background-color: rgb(245, 245, 245);
   display: flex;
   align-items: center;
   justify-content: center;
 
   .collaboratorsWrapper {
+    margin-top: 80px;
     width: 100%;
-    max-width: 1100px;
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    border-radius: 35px;
-    padding: 20px 0px;
-    // background-color: white;
+    justify-content: space-between;
 
     .collaboratorLogo {
-      height: 40px;
-      filter: saturate(0) brightness(0.3);
-      transition: filter 400ms;
+      cursor: pointer;
+      height: 37px;
+      filter: saturate(0) brightness(0) invert(100%);
+      // filter: brightness(10);
+      transition: all 400ms;
       &:hover {
-        filter: saturate(1) brightness(1);
+        filter: saturate(1);
       }
     }
   }

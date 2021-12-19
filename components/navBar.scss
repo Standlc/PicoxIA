@@ -12,20 +12,32 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
+    width: 85%;
     height: 65px;
     max-width: 1000px;
     border-radius: 25px;
-    background-color: rgba(235, 235, 235, 0.3);
+    background-color: rgba(240, 240, 240, 0.5);
+    color: white;
+    // color: rgb(70, 70, 70);
     backdrop-filter: blur(15px);
+    transition: color 400ms;
 
     .navBarLeft {
-      color: white;
       font-weight: 400;
       font-size: 25px;
       cursor: pointer;
     }
+    .navBarItem {
+      border: none;
+      background-color: transparent;
+      font-size: 17px;
+      cursor: pointer;
+      margin: 0 10px;
+    }
     .navBarCenter {
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     .navBarRight {
       .navBarRightItem {
@@ -41,20 +53,12 @@
         border: 2px solid rgb(87, 68, 255);
         border-radius: 15px;
       }
-      .navBarRightItem.invert{
+      .navBarRightItem.invert {
         background-color: transparent;
         border: 2px solid rgb(87, 68, 255);
         color: rgb(87, 68, 255);
         font-weight: 600;
       }
-    }
-    .navBarItem {
-      border: none;
-      background-color: transparent;
-      color: white;
-      font-size: 17px;
-      cursor: pointer;
-      margin: 0 10px;
     }
   }
 }

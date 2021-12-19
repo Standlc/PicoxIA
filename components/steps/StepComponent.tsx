@@ -1,22 +1,46 @@
-import React, { ReactElement } from "react";
+import React from "react";
+import { useEffect } from "react";
+import { useRef } from "react";
+import { handleStepItemAnimation } from "./stepItemAnimation";
 
 const StepComponent: React.FC<{
   content: string;
   image: string;
   invert: boolean;
-}> = ({ content, image, invert }) => {
+  callToAction: boolean;
+}> = ({ content, image, invert, callToAction }) => {
+  const descriptionTextRef = useRef<HTMLParagraphElement | null>(null);
+  const descriptionImageRef = useRef<HTMLParagraphElement | null>(null);
+  const lineRef = useRef<HTMLParagraphElement | null>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      handleStepItemAnimation(descriptionTextRef, descriptionImageRef, invert);
+    };
+    document.addEventListener("scroll", handleScroll);
+    return () => {
+      document.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <div className="stepComponentContainer">
-      <div className="stepLine" />
-
+      <div ref={lineRef} className="stepLine" />
       <div
         style={invert ? { flexDirection: "row-reverse" } : {}}
         className="stepComponentWrapper"
       >
-        <div className="stepImageWrapper">
+        <div ref={descriptionImageRef} className="stepImageWrapper">
           <img src={image} alt="" className="stepImage" />
         </div>
-        <p className="stepDescription">{content}</p>
+        <div className="stepDescriptionWrapper">
+          <p ref={descriptionTextRef} className="stepDescription">
+            {content}
+          </p>
+          {callToAction && (
+            <button className="stepButton">Essayer la démo</button>
+          )}
+        </div>
       </div>
     </div>
   );

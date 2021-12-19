@@ -10,29 +10,54 @@
     background-color: rgba(0, 0, 0, 0.3);
   }
   .stepComponentWrapper {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    // box-shadow: 0 5px 5px 0px rgba(0, 0, 0, 0.1);
+    background-color: transparent;
 
     .stepImageWrapper {
-      padding: 20px;
-      background-color: rgba(162, 137, 255, 0.3);
       border-radius: 25px;
-      width: 50vw;
-      box-shadow: 15px 15px 40px 0px rgba(0, 0, 0, 0.1);
+      flex: 1;
+      padding: 20px;
+      background-color: rgba(240, 240, 240, 1);
+      box-shadow: 25px 25px 0px 0 rgba(0, 109, 160, 0.247);
+      // box-shadow: 0px 0px 0px 100px rgba(66, 206, 241, 0.3);
+      transition: all 400ms;
 
       .stepImage {
         width: 100%;
         border-radius: 10px;
       }
     }
+    .stepDescriptionWrapper {
+      max-width: 350px;
+      margin: 0 40px;
 
-    .stepDescription {
-      font-size: 22px;
-      padding: 15px 30px;
-      border-radius: 20px;
-      background-color: transparent;
+      .stepDescription {
+        font-size: 22px;
+        transition: all 400ms;
+      }
+      .stepButton {
+        margin-top: 10px;
+        background-color: transparent;
+        color: rgba(0, 17, 255, 0.7);
+        font-size: 22px;
+        font-weight: 500;
+        border: 2px solid rgba(0, 17, 255, 0.7);
+        padding: 7px 30px;
+        border-radius: 18px;
+        transition: all 250ms;
+        cursor: pointer;
+        &:focus {
+          outline: none;
+        }
+        &:hover {
+          background-color: rgba(0, 17, 255, 0.7);
+          border: 2px solid rgba(0, 17, 255, 0);
+          color: white;
+        }
+      }
     }
   }
 }

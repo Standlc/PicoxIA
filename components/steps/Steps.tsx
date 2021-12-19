@@ -1,29 +1,43 @@
-import { AddPhotoAlternate } from "@material-ui/icons";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import StepComponent from "./StepComponent";
+import { handleStepsTitleAnimation } from "./stepTitleAnimation";
 
 const Steps: React.FC = () => {
+  const titleRef = useRef<HTMLHeadingElement | null>(null);
+  const paragraphRef = useRef<HTMLParagraphElement | null>(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      handleStepsTitleAnimation(titleRef, paragraphRef);
+    };
+    document.addEventListener("scroll", handleScroll);
+    return () => {
+      document.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <div className="stepsSection">
       <div className="stepsSectionWrapper">
-        <h1 className="stepsTitle">
+        <h1 ref={titleRef} className="stepsTitle">
           Aussi performant <br />
-          <span className="spanGradient"> qu'intuitif.</span>
+          <span className="spanGradient"> qu'intuitif</span>
         </h1>
-        <p className="stepsSubTitle">
+        <p ref={paragraphRef} className="stepsSubTitle">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae nihil
           nobis placeat ducimus.
         </p>
         <StepComponent
-          content="Lorem ipsum, dolor sit amet consectetur adipisicing elit."
+          content="Gilssez votre image, quelque soit le format."
           image="screenShot1.png"
           invert={false}
+          callToAction={false}
         />
-
         <StepComponent
-          content=" Assumenda minima, dolorem officia nam illo doloremque."
+          content="Recevez une rapport détaillé instantannément, vous assistant sur chaque cliché."
           image="screenShot1.png"
           invert={true}
+          callToAction={true}
         />
       </div>
     </div>

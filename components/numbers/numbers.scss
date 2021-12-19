@@ -1,0 +1,30 @@
+.numberSectionContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .numberSectionWrapper {
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+    max-width: 1100px;
+
+    .numberSectionTitle {
+      font-size: 60px;
+      color: rgb(70, 70, 70);
+      text-align: center;
+
+      .spanGradient {
+        background: -webkit-linear-gradient(
+          -70deg,
+          rgb(64, 124, 255),
+          rgb(48, 255, 151)
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+    }
+  }
+}

@@ -1,4 +1,5 @@
 import React from "react";
+import Collaborators from "./Collaborators";
 
 const Home: React.FC = () => {
   return (
@@ -13,8 +14,15 @@ const Home: React.FC = () => {
             veritatis corrupti amet vel voluptatum quis impedit doloremque,
             repellat laborum.
           </p>
-          <div className="homeButton">Start now</div>
-       
+          <div className="homeButton">
+            Start now
+            <div className="arrowWrapper">
+              <div className="arrowComponent top" />
+              <div className="arrowComponent middle" />
+              <div className="arrowComponent bottom" />
+            </div>
+          </div>
+          <Collaborators />
         </div>
         <div className="rightWrapper">
           <div className="homeImageWrapper">

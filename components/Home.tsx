@@ -6,16 +6,18 @@ const Home: React.FC = () => {
     <div className="homeContainer">
       <div className="homeWrapper">
         <div className="leftWrapper">
-          <h1 className="homeTitle">
+          <div className="homeTitle">
             Picox<span style={{ fontWeight: 300 }}>IA</span>
-          </h1>
+            <span style={{ marginLeft: "20px" }}>
+              <img src="picoxIALogo.png" alt="" />
+            </span>{" "}
+          </div>
           <p className="homeDescription">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum
-            veritatis corrupti amet vel voluptatum quis impedit doloremque,
-            repellat laborum.
+            L'outil d'analyse radiographique qui révolutionne l'imagerie
+            vétérinaire.
           </p>
           <div className="homeButton">
-            Start now
+            Démarrer
             <div className="arrowWrapper">
               <div className="arrowComponent top" />
               <div className="arrowComponent middle" />

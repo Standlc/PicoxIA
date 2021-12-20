@@ -4,6 +4,17 @@
   position: relative;
   justify-content: center;
   padding: 20px;
+  padding-bottom: 200px;
+
+  .wave {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+  }
 
   .presentationImageContainer {
     position: sticky;
@@ -12,6 +23,7 @@
     flex: 4;
     display: flex;
     align-items: center;
+    margin-right: 10px;
 
     .presentationImageWrapper {
       right: 0;
@@ -23,10 +35,13 @@
       box-shadow: 0 4px 5px rgba(0, 0, 0, 0.05), 0 15px 15px rgba(0, 0, 0, 0.1),
         0 30px 30px rgba(0, 0, 0, 0.05);
       backdrop-filter: blur(15px);
+      transition: all 400ms;
+      transform-origin: left;
 
       .presentationComponentImage {
         height: 100%;
         border-radius: 10px;
+        display: block;
       }
     }
   }
@@ -38,9 +53,11 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    z-index: 9;
 
     .presentationTitle {
-      font-size: 70px;
+      font-size: 60px;
+      font-weight: 300;
       color: white;
       text-align: center;
       margin: 0;
@@ -64,7 +81,7 @@
 
       .descriptionsContainer {
         flex: 3;
-        height: 250vh;
+        height: 240vh;
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;

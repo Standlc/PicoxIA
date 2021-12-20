@@ -3,27 +3,50 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  // background-color: whitesmoke;
+  padding: 40px 0;
 
   .numberSectionWrapper {
     height: 100%;
     width: 100%;
     padding: 20px;
     max-width: 1100px;
+    background-color: whitesmoke;
+    // background: linear-gradient(130deg, rgb(66, 217, 255), rgb(20, 149, 255));
+    // color: white;
+    border-radius: 60px;
+    padding: 0 60px;
 
-    .numberSectionTitle {
-      font-size: 60px;
-      color: rgb(70, 70, 70);
-      text-align: center;
+    .numberSectionTitleWrapper {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      height: 150px;
+      margin: 60px 0;
 
-      .spanGradient {
-        background: -webkit-linear-gradient(
-          -70deg,
-          rgb(64, 124, 255),
-          rgb(48, 255, 151)
-        );
-        -webkit-background-clip: text;
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
+      .dividerNumber {
+        height: 100%;
+        width: 5px;
+        background-color: rgb(220, 220, 220);
+        margin-right: 40px;
+      }
+      .numberSectionTitle {
+        font-size: 30px;
+        color: rgb(70, 70, 70);
+        font-weight: 300;
+        transition: all 400ms;
+
+        .numberSpanGradient {
+          font-size: 60px;
+          background: -webkit-linear-gradient(
+            -80deg,
+            rgb(0, 204, 255),
+            rgb(0, 110, 255)
+          );
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
       }
     }
   }

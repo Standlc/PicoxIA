@@ -1,6 +1,9 @@
 import React from "react";
 
-const PresentationComponent: React.FC<{ line: boolean }> = ({ line }) => {
+const PresentationComponent: React.FC<{
+  line: boolean;
+  callToAction: boolean;
+}> = ({ line, callToAction }) => {
   return (
     <div
       style={{
@@ -10,7 +13,6 @@ const PresentationComponent: React.FC<{ line: boolean }> = ({ line }) => {
         justifyContent: "center",
       }}
     >
-      {/* <div className="presentationLine" /> */}
       <div className="presentationDescriptionWrapper">
         <p className="presentationDescription">
           <span style={{ fontWeight: 700, color: "white" }}>
@@ -21,6 +23,9 @@ const PresentationComponent: React.FC<{ line: boolean }> = ({ line }) => {
           voluptatibus. Eius quae impedit id delectus et autem, odio fuga
           voluptas.
         </p>
+        {callToAction && (
+          <button className="presentationButton">Essayer la démo</button>
+        )}
       </div>
     </div>
   );

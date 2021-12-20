@@ -23,7 +23,7 @@ const NavBar: React.FC<{ changeNavBarItemsColor: boolean }> = ({
           <div className="navBarItem">blabla</div>
         </div>
         <div className="navBarRight">
-          <button className="navBarRightItem">Sign up</button>
+          <button className="navBarRightItem">Sign In</button>
           <button className="navBarRightItem invert">Register</button>
         </div>
       </div>

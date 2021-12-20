@@ -38,14 +38,12 @@ const Index: NextPage = () => {
         style={{
           background:
             "linear-gradient(120deg, rgb(109, 65, 255), rgb(66, 230, 161))",
-          paddingBottom: "250px",
           borderBottomLeftRadius: "-60px",
           position: "relative",
         }}
       >
         <Home />
         <Presentation />
-        <img src="wave1.svg" alt="" className="wave" />
       </div>
       <div ref={stepsContainerRef}>
         <Steps />

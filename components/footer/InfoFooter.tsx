@@ -8,9 +8,18 @@ const InfoFooter: React.FC = () => {
         <img src="trophy-logo.jpg" alt="" className="trophyLogo" />
       </div>
       <div className="infoFooterItem">
-        <Facebook className="footerIcon" />
-        <Twitter className="footerIcon" />
-        <LinkedIn className="footerIcon" />
+        <a href="https://www.facebook.com/picoxia" target="_blank">
+          <Facebook className="footerIcon" />
+        </a>
+        <a href="https://twitter.com/IaPicox" target="_blank">
+          <Twitter className="footerIcon" />
+        </a>
+        <a
+          href="https://www.linkedin.com/company/picoxia/about/"
+          target="_blank"
+        >
+          <LinkedIn className="footerIcon" />
+        </a>
       </div>
       <div className="infoFooterItem">+33 1 60 86 17 17</div>
     </div>

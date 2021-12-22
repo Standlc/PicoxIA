@@ -15,12 +15,12 @@ export const handleStepItemAnimation = (
       descriptionImageRef.current.style.opacity = "1";
     } else {
       descriptionTextRef.current.style.transform = invert
-        ? "translateX(-40px)"
-        : "translateX(40px)";
+        ? "translateX(-50px)"
+        : "translateX(50px)";
       descriptionTextRef.current.style.opacity = "0";
       descriptionImageRef.current.style.transform = invert
-        ? "translateX(40px)"
-        : "translateX(-40px)";
+        ? "translateX(50px)"
+        : "translateX(-50px)";
       descriptionImageRef.current.style.opacity = "0";
     }
   }

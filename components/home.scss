@@ -38,6 +38,7 @@
       align-items: flex-start;
       margin-right: 30px;
       height: 100%;
+      transition: all 700ms;
       @include mobile {
         margin: 0px;
         width: 100%;
@@ -71,68 +72,48 @@
         .homeDescription {
           margin: 0;
           color: white;
-          font-size: 25px;
+          font-size: 28px;
           font-weight: 300;
           @include mobile {
-            font-size: 22px;
+            font-size: 24px;
           }
         }
         .homeButton {
           margin-top: 40px;
-          background-color: rgba(38, 0, 255, 0.856);
+          background-color: rgba(38, 0, 255, 1);
           color: white;
           font-size: 22px;
           font-weight: 500;
           border: none;
-          padding: 10px 30px 10px 40px;
+          padding: 10px 40px 10px 20px;
           border-radius: 18px;
           display: flex;
           align-items: center;
           justify-content: center;
           cursor: pointer;
+          position: relative;
+          transition: opacity 200ms;
           &:focus {
             outline: none;
+          }
+          &:hover{
+            opacity: 0.7;
           }
           @include mobile {
             font-size: 20px;
             margin-top: 30px;
           }
-          .arrowWrapper {
-            position: relative;
-            display: flex;
-            justify-content: flex-end;
-            margin-left: 30px;
-            transform: scale(0.8);
-            .arrowComponent {
-              position: absolute;
-              height: 2px;
-              width: 13px;
-              border-radius: 5px;
-              background-color: white;
-              top: 0;
-              bottom: 0;
-              right: 0;
-              margin: auto;
-            }
-            .arrowComponent.top {
-              transform: rotate(45deg);
-              margin-bottom: 3px;
-            }
-            .arrowComponent.middle {
-              margin-right: 3px;
-              width: 18px;
-              opacity: 0;
-            }
-            .arrowComponent.bottom {
-              transform: rotate(-45deg);
-              margin-top: 3px;
-            }
+          .homeArrow{
+            font-size: 45px;
+            position: absolute;
+            right: 0;
           }
         }
       }
     }
 
     .rightWrapper {
+      transition: all 700ms;
       height: 100%;
       position: relative;
       flex: 1;

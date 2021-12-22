@@ -1,35 +1,35 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const PresentationComponent: React.FC<{
   image: string;
   boldText: string;
   text: string;
   callToAction: boolean;
-  shownImage: string | undefined;
+  animation: boolean;
   setShownImage: React.Dispatch<React.SetStateAction<string | undefined>>;
-}> = ({ image, boldText, text, callToAction, shownImage, setShownImage }) => {
+}> = ({ image, boldText, text, callToAction, setShownImage, animation }) => {
   const textRef = useRef<HTMLParagraphElement | null>(null);
+  // const [enableImageChange, setEnableImageChange] = useState<boolean>(false);
 
   useEffect(() => {
     const handleScroll = () => {
       if (textRef.current) {
         if (
           textRef.current.getBoundingClientRect().top <=
-            window.innerHeight * (3 / 5) &&
-          boldText !==
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+          window.innerHeight * (3 / 5)
         ) {
           setShownImage(image);
+        }
+        if (
+          textRef.current.getBoundingClientRect().top <=
+            window.innerHeight * (3 / 5) &&
+          animation
+        ) {
           textRef.current.style.opacity = "1";
           textRef.current.style.transform = "translateY(0px)";
-        } else if (
-          boldText !==
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit."
-        ) {
+        } else if (animation) {
           textRef.current.style.opacity = "0.5";
           textRef.current.style.transform = "translateY(50px)";
-        } else {
-          setShownImage(image);
         }
       }
     };
@@ -38,6 +38,12 @@ const PresentationComponent: React.FC<{
       document.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  // useEffect(() => {
+  //   if (enableImageChange) {
+  //     setShownImage(image);
+  //   }
+  // }, [enableImageChange]);
 
   return (
     <div

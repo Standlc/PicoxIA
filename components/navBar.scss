@@ -8,7 +8,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  position: fixed;
+  position: absolute;
+  // overflow: hidden;
   z-index: 999;
 
   .navBar {
@@ -21,8 +22,8 @@
     height: 65px;
     max-width: 1000px;
     border-radius: 25px;
-    background-color: rgba(240, 240, 240, 0.5);
     color: white;
+    background-color: rgba(240, 240, 240, 0.4);
     backdrop-filter: blur(15px);
     transition: color 400ms;
     @include mobile {
@@ -31,6 +32,8 @@
       border-radius: 0;
       padding: 20px;
       height: 60px;
+      background-color: transparent;
+      backdrop-filter: none;
     }
     .navBarLeft {
       font-weight: 200;
@@ -38,49 +41,111 @@
       cursor: pointer;
       text-transform: uppercase;
       flex: 1;
+      position: relative;
+      z-index: 99;
+      @include mobile {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(240, 240, 240, 0.5);
+        backdrop-filter: blur(10px);
+        border-radius: 15px;
+        padding: 0px 15px;
+        height: 40px;
+        flex: none;
+        font-size: 22px;
+      }
     }
     .navBarItem {
       border: none;
       background-color: transparent;
       font-size: 17px;
       cursor: pointer;
-      margin: 0 10px;
-    }
-    .navBarCenter {
-      display: flex;
-      align-items: center;
-      justify-content: space-evenly;
-      flex: 1;
       @include mobile {
-        display: none;
+        margin: 20px 0;
       }
     }
-    .navBarRight {
+    .navBarLinks {
+      flex: 2;
       display: flex;
       align-items: center;
-      justify-content: flex-end;
-      flex: 1;
+      justify-content: center;
       @include mobile {
-        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: calc(100%);
+        height: calc(100vh);
+        flex-direction: column;
+        backdrop-filter: blur(40px);
+        transition: opacity 400ms, transform 400ms;
+        opacity: 0;
+        pointer-events: none;
       }
-      .navBarRightItem {
-        border: none;
-        background-color: transparent;
-        color: white;
-        padding: 5px;
-        width: 120px;
-        font-size: 17px;
-        cursor: pointer;
-        margin-left: 20px;
-        background-color: rgb(87, 68, 255);
-        border: 2px solid rgb(87, 68, 255);
-        border-radius: 15px;
+      .navBarCenter {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex: 1;
+        @include mobile {
+          flex: none;
+          flex-direction: column;
+          justify-content: space-around;
+        }
       }
-      .navBarRightItem.invert {
-        background-color: transparent;
-        border: 2px solid rgb(87, 68, 255);
-        color: rgb(87, 68, 255);
-        font-weight: 600;
+      .navBarRight {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        flex: 1;
+        @include mobile {
+          flex: none;
+          flex-direction: column;
+          justify-content: flex-start;
+        }
+        .navBarRightItem {
+          border: none;
+          background-color: transparent;
+          color: white;
+          padding: 5px;
+          width: 120px;
+          font-size: 17px;
+          cursor: pointer;
+          margin-left: 20px;
+          background-color: rgba(38, 0, 255, 1);
+          border: 2px solid rgba(38, 0, 255, 1);
+          border-radius: 15px;
+          @include mobile {
+            margin: 10px 0;
+          }
+        }
+        .navBarRightItem.invert {
+          background-color: transparent;
+          border: 2px solid rgba(38, 0, 255, 1);
+          color: rgba(38, 0, 255, 1);
+          font-weight: 600;
+        }
+      }
+    }
+    .mobileBurger {
+      height: 40px;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      display: none;
+      background-color: rgba(240, 240, 240, 0.5);
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      padding: 10px 10px;
+      @include mobile {
+        display: flex;
+      }
+      .burgerMenuComponent {
+        height: 1px;
+        width: 30px;
+        background-color: white;
+        transition: transform 400ms;
+        transform-origin: left;
       }
     }
   }

@@ -58,25 +58,25 @@ const Presentation: React.FC = () => {
               text="Porro, iure ab. Ad minus dolore quasi odit, in laboriosam porro natus nam asperiores accusamus quisquam itaque minima tenetur. Similique, ipsa provident."
               boldText="Lorem ipsum dolor sit amet consectetur adipisicing elit."
               image="test1.jpg"
-              shownImage={shownImage}
               setShownImage={setShownImage}
               callToAction={false}
+              animation={false}
             />
             <PresentationComponent
               text="temporibus quas commodi, deserunt officia eius harum neque delectus voluptas velit nesciunt porro quod saepe. Temporibus, iure."
               boldText="Debitis minus dolorum sunt alias,"
               image="test2.jpg"
-              shownImage={shownImage}
               setShownImage={setShownImage}
               callToAction={false}
+              animation={true}
             />
             <PresentationComponent
               text="Illum eum, at adipisci velit molestiae error blanditiis deleniti dolorem nemo animi doloremque eius odio itaque."
               boldText="Quibusdam quidem perspiciatis officia ratione maxime."
               image="test3.jpg"
-              shownImage={shownImage}
               setShownImage={setShownImage}
               callToAction={true}
+              animation={true}
             />
           </div>
         </div>

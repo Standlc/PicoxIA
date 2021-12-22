@@ -39,6 +39,8 @@
       max-width: 900px;
       transition: all 400ms;
       line-height: 1.2;
+      opacity: 0;
+      transform: translateY(50px);
       @include mobile {
         font-size: 40px;
       }
@@ -51,6 +53,8 @@
       text-align: center;
       margin-bottom: 100px;
       transition: all 400ms;
+      opacity: 0;
+      transform: translateY(50px);
       @include mobile {
         font-size: 20px;
         margin-bottom: 30px;

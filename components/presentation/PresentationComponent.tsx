@@ -37,7 +37,7 @@ const PresentationComponent: React.FC<{
     return () => {
       document.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [setShownImage]);
 
   // useEffect(() => {
   //   if (enableImageChange) {

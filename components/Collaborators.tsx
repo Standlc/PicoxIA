@@ -5,7 +5,7 @@ const Collaborators: React.FC = () => {
     <div className="collaboratorsSection">
       <div className="collaboratorsWrapper">
         <a
-          href="http://www.fas-imagerie.com/"
+          // href="http://www.fas-imagerie.com/"
           target="_blank"
           className="collaboratorLink"
         >
@@ -13,7 +13,7 @@ const Collaborators: React.FC = () => {
         </a>
 
         <a
-          href="https://www.digivet.fr/"
+          // href="https://www.digivet.fr/"
           target="_blank"
           className="collaboratorLink"
         >
@@ -21,7 +21,7 @@ const Collaborators: React.FC = () => {
         </a>
 
         <a
-          href="https://www.ger-int.com/"
+          // href="https://www.ger-int.com/"
           target="_blank"
           className="collaboratorLink"
         >
@@ -29,7 +29,7 @@ const Collaborators: React.FC = () => {
         </a>
 
         <a
-          href="https://www.veterinaire-languedocia.com/"
+          // href="https://www.veterinaire-languedocia.com/"
           target="_blank"
           className="collaboratorLink"
         >

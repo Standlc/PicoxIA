@@ -1,21 +1,30 @@
+@mixin mobile {
+  @media screen and (max-width: 850px) {
+    @content;
+  }
+}
+
 .collaboratorsSection {
-  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
-
+  width: 100%;
   .collaboratorsWrapper {
-    margin-top: 80px;
     width: 100%;
-    display: flex;
-    align-items: center;
+    display: grid;
+    grid: auto/repeat(4, 0fr);
+    justify-items: center;
     justify-content: space-between;
-
+    align-items: center;
+    row-gap: 40px;
+    max-width: 600px;
+    @include mobile {
+      grid: auto/repeat(2, 0fr);
+      justify-content: space-around;
+    }
     .collaboratorLogo {
       cursor: pointer;
       height: 37px;
       filter: saturate(0) brightness(0) invert(100%);
-      // filter: brightness(10);
       transition: all 400ms;
       &:hover {
         filter: saturate(1);

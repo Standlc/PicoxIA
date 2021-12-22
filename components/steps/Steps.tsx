@@ -28,13 +28,15 @@ const Steps: React.FC = () => {
           nobis placeat ducimus.
         </p>
         <StepComponent
-          content="Gilssez votre image, quelque soit le format."
+          boldText="Gilssez votre image,"
+          text=" quelque soit le format."
           image="screenShot1.png"
           invert={false}
           callToAction={false}
         />
         <StepComponent
-          content="Recevez une rapport détaillé instantannément, vous assistant sur chaque cliché."
+          boldText="Recevez une rapport détaillé instantannément,"
+          text=" vous assistant sur chaque cliché."
           image="screenShot1.png"
           invert={true}
           callToAction={true}

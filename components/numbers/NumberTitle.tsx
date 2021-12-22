@@ -32,12 +32,9 @@ const NumberTitle: React.FC<{
 
   return (
     <div className="numberSectionTitleWrapper">
-      <div className="dividerNumber" />
       <h1 ref={titleRef} className="numberSectionTitle">
         {preTitle && preTitle}
-        {preTitle && <br />}
-        <span className="numberSpanGradient">{gradientTitle}</span>
-        <br />
+        <p className="numberTextGradient">{gradientTitle}</p>
         {postTitle}
       </h1>
     </div>

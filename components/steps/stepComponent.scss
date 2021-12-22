@@ -1,42 +1,98 @@
+@mixin mobile {
+  @media screen and (max-width: 800px) {
+    @content;
+  }
+}
+
 .stepComponentContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
+  @include mobile {
+    width: 100%;
+  }
+  .stepComponentWrapper.invert {
+    flex-direction: row-reverse;
+    @include mobile {
+      flex-direction: column-reverse;
+    }
+  }
+  .stepImageWrapper.invert {
+    @include mobile {
+      left: 30px;
+    }
+  }
   .stepComponentWrapper {
+    position: relative;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: transparent;
     margin-bottom: 100px;
-
-    .stepImageWrapper {
-      border-radius: 25px;
-      flex: 1;
-      padding: 20px;
-      // background-color: rgba(240, 240, 240, 1);
-      // box-shadow: 20px 20px 0px 0 rgba(0, 109, 160, 0.247);
-      // box-shadow: 0px 0px 0px 100px rgba(66, 206, 241, 0.3);
-      box-shadow: 5px 5px 20px 0 rgba(0, 0, 0, 0.2);
-      transition: all 400ms;
-
-      .stepImage {
+    @include mobile {
+      width: 100%;
+      flex-direction: column-reverse;
+      align-items: flex-start;
+    }
+    .stepImageContainer.invert {
+      @include mobile {
+        display: flex;
+        justify-content: flex-start;
+        padding: 0 30px;
+      }
+    }
+    .stepImageContainer {
+      @include mobile {
+        display: flex;
+        justify-content: flex-end;
         width: 100%;
-        height: 100%;
-        display: block;
-        border-radius: 10px;
+        padding: 0 30px;
+      }
+      .stepImageWrapper {
+        border-radius: 25px;
+        flex: 1;
+        padding: 20px;
+        // background-color: rgba(240, 240, 240, 1);
+        // box-shadow: 20px 20px 0px 0 rgba(0, 109, 160, 0.247);
+        // box-shadow: 0px 0px 0px 100px rgba(66, 206, 241, 0.3);
+        box-shadow: 10px 10px 40px 0 rgba(0, 0, 0, 0.2);
+        border: 1px solid rgb(220, 220, 220);
+        transition: all 400ms;
+        @include mobile {
+          padding: 0;
+          border: none;
+        }
+        .stepImage {
+          width: 100%;
+          display: block;
+          border-radius: 7px;
+          @include mobile {
+            width: 120vw;
+            border-radius: 10px;
+            border: 1px solid rgb(220, 220, 220);
+          }
+        }
       }
     }
     .stepDescriptionWrapper {
-      max-width: 350px;
-      margin: 0 40px;
-
+      max-width: 400px;
+      padding: 30px;
+      @include mobile {
+        max-width: none;
+        padding: 30px;
+      }
       .stepDescription {
         font-size: 22px;
         transition: all 400ms;
+        margin: 0;
         margin-left: 30px;
+        font-weight: 300;
+        position: relative;
+        @include mobile {
+          font-size: 20px;
+        }
       }
       .stepDescription::before {
         left: -30px;
@@ -45,10 +101,10 @@
         display: block;
         height: 100%;
         width: 5px;
-        background-color: rgb(220, 220, 220);
+        background-color: rgb(200, 200, 200);
       }
       .stepButton {
-        margin-top: 10px;
+        margin-top: 30px;
         background-color: transparent;
         color: rgba(0, 17, 255, 0.7);
         font-size: 22px;
@@ -65,6 +121,9 @@
           background-color: rgba(0, 17, 255, 0.7);
           border: 2px solid rgba(0, 17, 255, 0);
           color: white;
+        }
+        @include mobile {
+          font-size: 20px;
         }
       }
     }

@@ -13,7 +13,7 @@ const NumbersSection: React.FC = () => {
         <NumberTitle
           gradientTitle="250 000 images analysées"
           preTitle=""
-          postTitle="par des radiologues dans notre base de données"
+          postTitle="par des radiologues dans notre base de données."
         />
         <NumberTitle
           gradientTitle="34 000 radios analysées"

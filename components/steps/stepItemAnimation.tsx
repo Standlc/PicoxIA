@@ -1,7 +1,7 @@
 export const handleStepItemAnimation = (
-  descriptionTextRef,
-  descriptionImageRef,
-  invert
+  descriptionTextRef: React.MutableRefObject<HTMLParagraphElement | null>,
+  descriptionImageRef: React.MutableRefObject<HTMLParagraphElement | null>,
+  invert: boolean
 ) => {
   if (descriptionTextRef.current && descriptionImageRef.current) {
     if (

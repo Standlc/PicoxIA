@@ -1,5 +1,9 @@
+@mixin mobile {
+  @media screen and (max-width: 800px) {
+    @content;
+  }
+}
 .navBarContainer {
-  height: 110px;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -9,6 +13,7 @@
 
   .navBar {
     padding: 30px;
+    margin-top: 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -20,11 +25,18 @@
     color: white;
     backdrop-filter: blur(15px);
     transition: color 400ms;
-
+    @include mobile {
+      width: 100%;
+      margin-top: 0px;
+      border-radius: 0;
+      padding: 20px;
+      height: 60px;
+    }
     .navBarLeft {
-      font-weight: 400;
+      font-weight: 200;
       font-size: 25px;
       cursor: pointer;
+      text-transform: uppercase;
       flex: 1;
     }
     .navBarItem {
@@ -39,13 +51,18 @@
       align-items: center;
       justify-content: space-evenly;
       flex: 1;
+      @include mobile {
+        display: none;
+      }
     }
     .navBarRight {
       display: flex;
       align-items: center;
       justify-content: flex-end;
       flex: 1;
-
+      @include mobile {
+        display: none;
+      }
       .navBarRightItem {
         border: none;
         background-color: transparent;

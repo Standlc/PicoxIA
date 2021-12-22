@@ -1,17 +1,31 @@
+@mixin mobile {
+  @media screen and (max-width: 800px) {
+    @content;
+  }
+}
+$fontSize: 22px;
+$mobileFontSize: 20px;
+
 .presentationDescriptionWrapper {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  padding: 0px 30px;
-
+  margin: 0px 0px 0px 30px;
+  transition: all 400ms;
+  @include mobile {
+    padding: 0px;
+  }
   .presentationDescription {
-    color: whitesmoke;
-    font-size: 22px;
+    color: white;
+    font-size: $fontSize;
     margin: 0px 30px;
-    margin-bottom: 20px;
     font-weight: 300;
     position: relative;
+    @include mobile {
+      font-size: $mobileFontSize;
+      margin: 0;
+    }
   }
   .presentationDescription::before {
     left: -30px;
@@ -21,12 +35,15 @@
     height: 100%;
     width: 5px;
     background-color: rgba(255, 255, 255, 0.5);
+    @include mobile {
+      // display: none;
+    }
   }
   .presentationButton {
-    margin-top: 10px;
+    margin-top: 30px;
     background-color: transparent;
     color: rgba(255, 255, 255, 1);
-    font-size: 22px;
+    font-size: $fontSize;
     font-weight: 500;
     border: 2px solid rgba(255, 255, 255, 1);
     padding: 7px 30px;
@@ -36,9 +53,12 @@
     &:focus {
       outline: none;
     }
+    @include mobile {
+      font-size: $mobileFontSize;
+    }
   }
   .presentationButton:hover {
     background-color: white;
-    color: rgb(70, 70, 70);
+    color: rgb(66, 204, 214);
   }
 }

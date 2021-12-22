@@ -1,43 +1,59 @@
+@mixin mobile {
+  @media screen and (max-width: 800px) {
+    @content;
+  }
+}
+
 .numberSectionContainer {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  // background-color: whitesmoke;
-  padding: 40px 0;
-
+  padding: 40px 20px;
+  @include mobile {
+    padding: 0 30px 0 30px;
+  }
   .numberSectionWrapper {
     height: 100%;
-    width: 100%;
-    padding: 20px;
     max-width: 1100px;
-    background-color: whitesmoke;
-    // background: linear-gradient(130deg, rgb(66, 217, 255), rgb(20, 149, 255));
-    // color: white;
-    border-radius: 60px;
-    padding: 0 60px;
-
+    overflow: hidden;
+    @include mobile {
+      padding: 0px;
+      border-radius: 30px;
+      background-color: transparent;
+    }
+    .numberSectionTitleWrapper::before {
+      left: -30px;
+      position: absolute;
+      content: "";
+      display: block;
+      height: 80%;
+      width: 5px;
+      background-color: rgb(200, 200, 200);
+    }
     .numberSectionTitleWrapper {
       display: flex;
       align-items: center;
       justify-content: flex-start;
-      height: 150px;
       margin: 60px 0;
-
-      .dividerNumber {
-        height: 100%;
-        width: 5px;
-        background-color: rgb(220, 220, 220);
-        margin-right: 40px;
+      margin-left: 30px;
+      position: relative;
+      @include mobile {
+        margin: 20px 0 20px 30px;
       }
       .numberSectionTitle {
-        font-size: 30px;
+        font-size: 25px;
         color: rgb(70, 70, 70);
-        font-weight: 300;
+        font-weight: 500;
         transition: all 400ms;
-
-        .numberSpanGradient {
+        @include mobile {
+          font-size: 20px;
+        }
+        .numberTextGradient {
+          font-weight: 300;
+          line-height: 1.2;
           font-size: 60px;
+          margin: 0;
           background: -webkit-linear-gradient(
             -80deg,
             rgb(0, 204, 255),
@@ -46,6 +62,9 @@
           -webkit-background-clip: text;
           background-clip: text;
           -webkit-text-fill-color: transparent;
+          @include mobile {
+            font-size: 40px;
+          }
         }
       }
     }

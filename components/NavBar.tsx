@@ -16,7 +16,9 @@ const NavBar: React.FC<{ changeNavBarItemsColor: boolean }> = ({
   return (
     <div className="navBarContainer">
       <div ref={navBarRef} className="navBar">
-        <h1 className="navBarLeft">PicoxIA</h1>
+        <h1 className="navBarLeft">
+          Picox<span style={{ fontWeight: 500 }}>IA</span>
+        </h1>
         <div className="navBarCenter">
           <div className="navBarItem">blabla</div>
           <div className="navBarItem">blabla</div>

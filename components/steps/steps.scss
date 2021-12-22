@@ -1,25 +1,39 @@
+@mixin mobile {
+  @media screen and (max-width: 800px) {
+    @content;
+  }
+}
+
 .stepsSection {
   width: 100%;
   background-color: rgb(255, 255, 255);
   display: flex;
   justify-content: center;
   color: rgb(70, 70, 70);
+  overflow: hidden;
+  padding: 0px 20px;
+  @include mobile {
+    padding: 0;
+  }
+
   .stepsSectionWrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
-    max-width: 1200px;
-    padding: 0px 20px;
-    padding-bottom: 50px;
+    max-width: 1100px;
 
     .stepsTitle {
       font-size: 60px;
       text-align: center;
-      margin-bottom: 0;
+      margin: 0;
       transition: all 400ms;
       font-weight: 300;
+      line-height: 1.2;
+      @include mobile {
+        font-size: 40px;
+      }
 
       .spanGradient {
         background: -webkit-linear-gradient(
@@ -40,6 +54,11 @@
       font-weight: 300;
       transition: all 400ms;
       margin-bottom: 100px;
+      padding: 0 20px;
+      @include mobile {
+        margin-bottom: 50px;
+        font-size: 20px;
+      }
     }
   }
 }

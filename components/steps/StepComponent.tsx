@@ -4,14 +4,14 @@ import { useRef } from "react";
 import { handleStepItemAnimation } from "./stepItemAnimation";
 
 const StepComponent: React.FC<{
-  content: string;
+  boldText: string;
+  text: string;
   image: string;
   invert: boolean;
   callToAction: boolean;
-}> = ({ content, image, invert, callToAction }) => {
+}> = ({ text, image, invert, callToAction, boldText }) => {
   const descriptionTextRef = useRef<HTMLParagraphElement | null>(null);
   const descriptionImageRef = useRef<HTMLParagraphElement | null>(null);
-  const lineRef = useRef<HTMLParagraphElement | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -25,17 +25,27 @@ const StepComponent: React.FC<{
 
   return (
     <div className="stepComponentContainer">
-      <div ref={lineRef} className="stepLine" />
       <div
-        style={invert ? { flexDirection: "row-reverse" } : {}}
-        className="stepComponentWrapper"
+        className={
+          invert ? "stepComponentWrapper invert" : "stepComponentWrapper"
+        }
       >
-        <div ref={descriptionImageRef} className="stepImageWrapper">
-          <img src={image} alt="" className="stepImage" />
+        <div
+          className={
+            invert ? "stepImageContainer invert" : "stepImageContainer"
+          }
+        >
+          <div
+            className={invert ? "stepImageWrapper invert" : "stepImageWrapper"}
+            ref={descriptionImageRef}
+          >
+            <img src={image} alt="" className="stepImage" />
+          </div>
         </div>
         <div className="stepDescriptionWrapper">
           <p ref={descriptionTextRef} className="stepDescription">
-            {content}
+            <span style={{ fontWeight: "600" }}>{boldText}</span>
+            {text}
           </p>
           {callToAction && (
             <button className="stepButton">Essayer la démo</button>

@@ -8,15 +8,20 @@ const InfoFooter: React.FC = () => {
         <img src="trophy-logo.jpg" alt="" className="trophyLogo" />
       </div>
       <div className="infoFooterItem">
-        <a href="https://www.facebook.com/picoxia" target="_blank">
+        <a
+          href="https://www.facebook.com/picoxia"
+          rel="noreferrer"
+          target="_blank"
+        >
           <Facebook className="footerIcon" />
         </a>
-        <a href="https://twitter.com/IaPicox" target="_blank">
+        <a href="https://twitter.com/IaPicox" rel="noreferrer" target="_blank">
           <Twitter className="footerIcon" />
         </a>
         <a
           href="https://www.linkedin.com/company/picoxia/about/"
           target="_blank"
+          rel="noreferrer"
         >
           <LinkedIn className="footerIcon" />
         </a>

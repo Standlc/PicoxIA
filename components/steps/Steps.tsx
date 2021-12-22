@@ -21,7 +21,7 @@ const Steps: React.FC = () => {
       <div className="stepsSectionWrapper">
         <h1 ref={titleRef} className="stepsTitle">
           Aussi performant <br />
-          <span className="spanGradient"> qu'intuitif</span>
+          <span className="spanGradient">qu'intuitif</span>
         </h1>
         <p ref={paragraphRef} className="stepsSubTitle">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae nihil

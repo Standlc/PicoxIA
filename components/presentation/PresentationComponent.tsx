@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 
 const PresentationComponent: React.FC<{
   image: string;
@@ -9,7 +9,6 @@ const PresentationComponent: React.FC<{
   setShownImage: React.Dispatch<React.SetStateAction<string | undefined>>;
 }> = ({ image, boldText, text, callToAction, setShownImage, animation }) => {
   const textRef = useRef<HTMLParagraphElement | null>(null);
-  // const [enableImageChange, setEnableImageChange] = useState<boolean>(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,12 +37,6 @@ const PresentationComponent: React.FC<{
       document.removeEventListener("scroll", handleScroll);
     };
   }, [setShownImage]);
-
-  // useEffect(() => {
-  //   if (enableImageChange) {
-  //     setShownImage(image);
-  //   }
-  // }, [enableImageChange]);
 
   return (
     <div

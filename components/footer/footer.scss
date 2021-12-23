@@ -50,46 +50,52 @@
       align-items: center;
       justify-content: flex-end;
       margin-bottom: 100px;
-      .footerTitle {
-        font-size: 80px;
-        color: white;
-        font-weight: 300;
-        text-align: center;
-        line-height: 1.2;
-        margin-bottom: 20px;
-      transition: all 400ms;
-        @include mobile {
-          font-size: 50px;
-        }
-      }
-      .footerButton {
-        background-color: rgba(38, 0, 255, 1);
-        color: white;
-        font-size: 22px;
-        font-weight: 500;
-        border: none;
-        padding: 10px 40px 10px 20px;
-        border-radius: 18px;
+      .footerTitleWrapper {
         display: flex;
+        flex-direction: column;
         align-items: center;
         justify-content: center;
-        cursor: pointer;
-        position: relative;
-        transition: opacity 200ms;
-        &:focus {
-          outline: none;
+        transition: all 400ms;
+        .footerTitle {
+          font-size: 80px;
+          color: white;
+          font-weight: 300;
+          text-align: center;
+          line-height: 1.2;
+          margin-bottom: 20px;
+          @include mobile {
+            font-size: 50px;
+          }
         }
-        &:hover {
-          opacity: 0.7;
-        }
-        @include mobile {
-          font-size: 20px;
-          margin-top: 30px;
-        }
-        .footerArrow {
-          font-size: 45px;
-          position: absolute;
-          right: 0;
+        .footerButton {
+          background-color: rgba(38, 0, 255, 1);
+          color: white;
+          font-size: 22px;
+          font-weight: 500;
+          border: none;
+          padding: 10px 40px 10px 20px;
+          border-radius: 18px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          position: relative;
+          transition: opacity 200ms;
+          &:focus {
+            outline: none;
+          }
+          &:hover {
+            opacity: 0.7;
+          }
+          @include mobile {
+            font-size: 20px;
+            margin-top: 30px;
+          }
+          .footerArrow {
+            font-size: 45px;
+            position: absolute;
+            right: 0;
+          }
         }
       }
     }

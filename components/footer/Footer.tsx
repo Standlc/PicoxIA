@@ -21,15 +21,17 @@ const Footer: React.FC = () => {
       <img src="wave2.svg" alt="" className="transitionWaveFooter" />
       <div className="footerWrapper">
         <div className="footerTop">
-          <h1  ref={titleRef}  className="footerTitle">
-            Lancez vous avec <br />{" "}
-            <span style={{ fontWeight: 100 }}>Picox</span>
-            <span style={{ fontWeight: 300 }}>IA</span>
-          </h1>
-          <button className="footerButton">
-            Je me lance
-            <ArrowRightRounded className="footerArrow" />
-          </button>
+          <div ref={titleRef} className="footerTitleWrapper">
+            <h1  className="footerTitle">
+              Lancez vous avec <br />{" "}
+              <span style={{ fontWeight: 100 }}>Picox</span>
+              <span style={{ fontWeight: 300 }}>IA</span>
+            </h1>
+            <button className="footerButton">
+              Je me lance
+              <ArrowRightRounded className="footerArrow" />
+            </button>
+          </div>
         </div>
         <div ref={bottomWrapperRef} className="footerBottom">
           <InfoFooter />

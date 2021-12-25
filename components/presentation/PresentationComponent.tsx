@@ -12,25 +12,25 @@ const PresentationComponent: React.FC<{
 
   useEffect(() => {
     const handleScroll = () => {
-      if (textRef.current) {
-        if (
-          textRef.current.getBoundingClientRect().top <=
-          window.innerHeight * (3 / 5)
-        ) {
-          setShownImage(image);
-        }
-        if (
-          textRef.current.getBoundingClientRect().top <=
-            window.innerHeight * (3 / 5) &&
-          animation
-        ) {
-          textRef.current.style.opacity = "1";
-          textRef.current.style.transform = "translateY(0px)";
-        } else if (animation) {
-          textRef.current.style.opacity = "0.5";
-          textRef.current.style.transform = "translateY(50px)";
-        }
-      }
+      // if (textRef.current) {
+      //   if (
+      //     textRef.current.getBoundingClientRect().top <=
+      //     window.innerHeight * (3 / 5)
+      //   ) {
+      //     setShownImage(image);
+      //   }
+      //   if (
+      //     textRef.current.getBoundingClientRect().top <=
+      //       window.innerHeight * (3 / 5) &&
+      //     animation
+      //   ) {
+      //     textRef.current.style.opacity = "1";
+      //     textRef.current.style.transform = "translateY(0px)";
+      //   } else if (animation) {
+      //     textRef.current.style.opacity = "0.5";
+      //     textRef.current.style.transform = "translateY(50px)";
+      //   }
+      // }
     };
     document.addEventListener("scroll", handleScroll);
     return () => {

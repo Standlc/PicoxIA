@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 import { handleStepsTitleAnimation } from "../steps/stepTitleAnimation";
 import PresentationComponent from "./PresentationComponent";
@@ -7,7 +8,9 @@ const Presentation: React.FC = () => {
   const paragraphRef = useRef<HTMLParagraphElement | null>(null);
   const imageWrapperRef = useRef<HTMLDivElement | null>(null);
   const imageContainerRef = useRef<HTMLDivElement | null>(null);
-  const [shownImage, setShownImage] = useState<string | undefined>("screenShot1.png");
+  const [shownImage, setShownImage] = useState<string | undefined>(
+    "/screenShot1.png"
+  );
 
   useEffect(() => {
     const handleScroll = () => {
@@ -46,7 +49,7 @@ const Presentation: React.FC = () => {
           <div ref={imageContainerRef} className="presentationImageContainer">
             <div ref={imageWrapperRef} className="presentationImageWrapper">
               <img
-                src={shownImage}
+                src={shownImage === undefined ? "/screenShot1.png" : shownImage}
                 alt=""
                 className="presentationComponentImage"
               />
@@ -56,7 +59,7 @@ const Presentation: React.FC = () => {
             <PresentationComponent
               text="Porro, iure ab. Ad minus dolore quasi odit, in laboriosam porro natus nam asperiores accusamus quisquam itaque minima tenetur. Similique, ipsa provident."
               boldText="Lorem ipsum dolor sit amet consectetur adipisicing elit."
-              image="screenShot1.png"
+              image="/screenShot1.png"
               setShownImage={setShownImage}
               callToAction={false}
               animation={false}
@@ -64,7 +67,7 @@ const Presentation: React.FC = () => {
             <PresentationComponent
               text="temporibus quas commodi, deserunt officia eius harum neque delectus voluptas velit nesciunt porro quod saepe. Temporibus, iure."
               boldText="Debitis minus dolorum sunt alias,"
-              image="test1.jpg"
+              image="/test1.jpg"
               setShownImage={setShownImage}
               callToAction={false}
               animation={true}
@@ -72,7 +75,7 @@ const Presentation: React.FC = () => {
             <PresentationComponent
               text="Illum eum, at adipisci velit molestiae error blanditiis deleniti dolorem nemo animi doloremque eius odio itaque."
               boldText="Quibusdam quidem perspiciatis officia ratione maxime."
-              image="test2.jpg"
+              image="/test2.jpg"
               setShownImage={setShownImage}
               callToAction={true}
               animation={true}
